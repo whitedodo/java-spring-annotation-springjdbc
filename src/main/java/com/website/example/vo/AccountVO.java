@@ -1,3 +1,13 @@
+/*
+ * 	주제(Subject): Spring JDBCTemplate - Annotation 방식 구현
+ *  파일명(Filename): AccountVO.java
+ *  저자(Author): Dodo / rabbit.white at daum dot net
+ *  생성일자(Create date): 2020-10-10
+ *  설명(Description):
+ * 
+ * 
+ */
+
 package com.website.example.vo;
 
 import java.sql.Timestamp;;

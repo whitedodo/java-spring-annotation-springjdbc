@@ -1,9 +1,9 @@
 /*
- * 	주제(Subject): Java Spring JDBC에서 어노테이션(X) - 트랜젝션 구현
- *  작성일자(Create Date): 2020-10-09
- *  저자(Author): Dodo / rabbit.white at daum dot net
+ * 	주제(Subject): Spring JDBCTemplate - Annotation 방식 구현
  *  파일명(Filename): MainTest.java
- *  비고(Description):
+ *  저자(Author): Dodo / rabbit.white at daum dot net
+ *  생성일자(Create date): 2020-10-10
+ *  설명(Description):
  * 
  * 
  */
@@ -11,26 +11,28 @@
 package com.website.example.unit;
 
 import java.sql.SQLException;
+
 import java.sql.Timestamp;
 
-import javax.sql.DataSource;
-
 import org.junit.jupiter.api.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.website.example.common.MyDataSourceFactory;
+import com.website.example.common.RootConfig;
 import com.website.example.service.AccountService;
-import com.website.example.service.AccountServiceImpl;
 import com.website.example.vo.AccountVO;
+
 
 class MainTest {
 
 	@Test
 	void test() throws SQLException {
-
-		MyDataSourceFactory sourceFactory = new MyDataSourceFactory();
-		DataSource ds = sourceFactory.getOracleDataSource();
 		
-		AccountService service = new AccountServiceImpl(ds);
+		@SuppressWarnings("resource")
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(RootConfig.class);
+		
+		AccountService service = (AccountService) applicationContext.getBean("accountServiceImpl");
+		
 		AccountVO vo = new AccountVO();
 		
 		/*
@@ -49,7 +51,6 @@ class MainTest {
 		
 		// 3. 거래 처리
 		service.accountTransfer("홍길동", "홍길자", 500);
-		
 		
 	}
 
