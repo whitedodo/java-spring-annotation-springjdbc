@@ -22,7 +22,7 @@ Java Spring - Annotation 방식을 ApplicationContext을 이용하여 Spring JDB
 ##### (After applying ApplicationContext, reading the ContextXml file and setting it, it is set to enable annotation.)
 
 ### 2. 시연(Demonstration)
-##### 1.
+##### 1. Spring Framework 4.24, Spring Jdbc, Annotation - xml, java Config 버전, https://youtu.be/LRwAq8YLPWU, Accessed by 2020-10-10, Last Modified 2020-10-10.
 
 ### 3. 참고자료(Reference)
 ##### 1. Maven Repository: Search/Browse/Explore, https://mvnrepository.com/, Accessed by 2020-09-24, Last Modified .
